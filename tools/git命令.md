@@ -1,5 +1,7 @@
 # Git命令
 
+官网文档 [http://git-scm.com/docs/](http://git-scm.com/docs/)
+
 ### 1.查看和修改配置信息
 Git 提供了一个叫做 `git config` 的工具，专门用来配置或读取相应的工作环境变量
 
@@ -236,3 +238,25 @@ git rm 删除文件有以下几种形式：
 查看指定文件的修改记录</br>
 > `git blame <file>`
 
+##### <a id='remote'>git remote</a>
+`git remote` 命用于在远程仓库的操作。</br>
+显示所有远程仓库：
+> `git remote -v`
+
+显示某个远程仓库的信息：
+> `git remote show [name]`
+
+添加远程版本库：
+> `git remote add [shortname] [url]`
+
+其他相关命令：
+> `git remote rm [name]`                      # 删除远程仓库</br>
+> `git remote rename [old_name] [new_name]`   # 修改仓库名</br>
+
+##### <a id='fetch'>git fetch</a>
+`git fetch` 命令用于从远程获取代码库。</br>
+提取更新的数据：
+> `git fetch [alias]`
+
+尝试合并到当前分支
+> `git merge [alias]/[branch]`
