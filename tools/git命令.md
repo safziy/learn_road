@@ -117,7 +117,7 @@ git status
 git status -s
 ```
 
-##### <a id='status'>git diff</a>
+##### <a id='diff'>git diff</a>
 `git diff` 命令比较文件的不同，即比较文件在暂存区和工作区的差异。</br>
 `git diff` 命令显示已写入暂存区和已经被修改但尚未写入暂存区文件的区别。</br>
 `git diff` 有两个主要的应用场景。
@@ -190,3 +190,49 @@ git commit -a
   - HEAD^2 上上一个版本
   - HEAD^3 上上上一个版本
   - 以此类推...
+
+
+##### <a id='rm'>git rm</a>
+`git rm` 命令用于删除文件。</br>
+如果只是简单地从工作目录中手工删除文件，运行 `git status` 时就会在 `Changes not staged for commit` 的提示。</br>
+git rm 删除文件有以下几种形式：
+1. 将文件从暂存区和工作区中删除：
+> `git rm <file>`
+2. 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 `-f`
+> `git rm -f <file>`
+3. 如果想把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 `--cached` 选项即可
+`git diff` 有两个主要的应用场景。
+> `git rm --cached <file>`
+4. `-r`可以递归删除，即如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件
+> `git rm –r *`
+
+##### <a id='mv'>git mv</a>
+`git mv` 命令用于移动或重命名一个文件、目录或软连接。
+> `git mv [file] [newfile]`
+
+如果新文件名已经存在，但还是要重命名它，可以使用 `-f` 参数：
+> `git mv -f [file] [newfile]`
+
+##### <a id='log'>git log</a>
+查看历史提交记录。</br>
+在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 `git log` 命令查看。</br>
+> `git logq`
+
+我们可以用 `--oneline` 选项来查看历史记录的简洁的版本。</br>
+> `git log --oneline`
+
+我们还可以用 `--graph` 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：
+> `git log --graph`
+
+也可以用 `--reverse` 参数来逆向显示所有日志
+> `git log --reverse`
+
+如果只想查找指定用户的提交日志可以使用命令：`git log --author`, 例如，比方说我们要找 Git 源码中 Linus 提交的部分：
+> `git log --author=safziy`
+
+更多git log命令可以查看 [http://git-scm.com/docs/git-log](http://git-scm.com/docs/git-log)
+
+##### <a id='blame'>git blame</a>
+查看指定文件的修改记录</br>
+> `git blame <file>`
+
