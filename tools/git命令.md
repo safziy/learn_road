@@ -240,41 +240,43 @@ git rm 删除文件有以下几种形式：
 
 ##### <a id='remote'>git remote</a>
 `git remote` 命用于在远程仓库的操作。</br>
-显示所有远程仓库：
-> `git remote -v`
+```shell
+# 显示所有远程仓库：
+git remote -v
+# 显示某个远程仓库的信息：
+git remote show [name]
+# 添加远程版本库
+git remote add [shortname] [url]
+# 删除远程仓库
+git remote rm [name]
+# 修改仓库名
+git remote rename [old_name] [new_name]
+```
 
-显示某个远程仓库的信息：
-> `git remote show [name]`
-
-添加远程版本库：
-> `git remote add [shortname] [url]`
-
-其他相关命令：
-> `git remote rm [name]`                      # 删除远程仓库</br>
-> `git remote rename [old_name] [new_name]`   # 修改仓库名</br>
 
 ##### <a id='fetch'>git fetch</a>
 `git fetch` 命令用于从远程获取代码库。</br>
-提取更新的数据：
-> `git fetch [alias]`
+```shell
+# 提取更新的数据
+git fetch [alias]
+# 尝试合并到当前分支
+git merge [alias]/[branch]
+```
 
-尝试合并到当前分支
-> `git merge [alias]/[branch]`
 
 ##### <a id='pull'>git pull</a>
 `git pull` 命令用于从远程获取代码并合并本地的版本。</br>
 `git pull` 其实就是 `git fetch` 和 `git merge FETCH_HEAD` 的简写。 命令格式如下：</br>
 > `git pull <远程主机名> <远程分支名>:<本地分支名>`
-
-更新操作：
-> `git pull` </br>
-> `git pull origin` </br>
-
-将远程主机 origin 的 master 分支拉取过来，与本地的 develop 分支合并。
-> `git pull origin master:develop`
-
-如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
-> `git pull origin master`
+```shell
+# 更新操作：
+git pull
+git pull origin
+# 将远程主机 origin 的 master 分支拉取过来，与本地的 develop 分支合并。
+git pull origin master:develop
+# 如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
+git pull origin master
+```
 
 
 ##### <a id='push'>git push</a>
@@ -286,14 +288,13 @@ git rm 删除文件有以下几种形式：
 > `git push <远程主机名> <本地分支名>`
 
 示例</br>
-以下命令将本地的 master 分支推送到 origin 主机的 master 分支。
-> `git push origin master`
-
-相等于：
-> `git push origin master:master`
-
-如果本地版本与远程版本有差异，但又要强制推送可以使用 `--force` 参数：
-> `git push --force origin master`
-
-删除主机的分支可以使用 `--delete` 参数，以下命令表示删除 origin 主机的 master 分支：
-> `git push origin --delete master`
+```shell
+# 以下命令将本地的 master 分支推送到 origin 主机的 master 分支。
+git push origin master
+# 相等于：
+git push origin master:master
+# 如果本地版本与远程版本有差异，但又要强制推送可以使用 `--force` 参数：
+git push --force origin master
+# 删除主机的分支可以使用 `--delete` 参数，以下命令表示删除 origin 主机的 master 分支：
+git push origin --delete master
+```
