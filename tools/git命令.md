@@ -305,3 +305,9 @@ git push origin --delete master
 
 合并分支
 > `git merge`
+
+创建新分支并立即切换到该分支下
+> `git branch -b <branchname>`
+
+删除分支
+> `git branch -d <branchname>`
