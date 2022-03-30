@@ -253,7 +253,6 @@ git remote rm [name]
 git remote rename [old_name] [new_name]
 ```
 
-
 ##### <a id='fetch'>git fetch</a>
 `git fetch` 命令用于从远程获取代码库。</br>
 ```shell
@@ -262,7 +261,6 @@ git fetch [alias]
 # 尝试合并到当前分支
 git merge [alias]/[branch]
 ```
-
 
 ##### <a id='pull'>git pull</a>
 `git pull` 命令用于从远程获取代码并合并本地的版本。</br>
@@ -277,7 +275,6 @@ git pull origin master:develop
 # 如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
 git pull origin master
 ```
-
 
 ##### <a id='push'>git push</a>
 `git push` 命用于从将本地的分支版本上传到远程并合并。</br>
@@ -298,3 +295,13 @@ git push --force origin master
 # 删除主机的分支可以使用 `--delete` 参数，以下命令表示删除 origin 主机的 master 分支：
 git push origin --delete master
 ```
+
+### 3.分支操作
+创建分支命令
+> `git branch <branchname>`
+
+切换分支命令
+> `git checkout <branchname>`
+
+合并分支
+> `git merge`
