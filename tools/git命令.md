@@ -303,8 +303,6 @@ git push origin --delete master
 切换分支命令
 > `git checkout <branchname>`
 
-
-
 创建新分支并立即切换到该分支下
 > `git checkout -b <branchname>`
 
