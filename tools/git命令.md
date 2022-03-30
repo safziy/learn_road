@@ -303,11 +303,13 @@ git push origin --delete master
 切换分支命令
 > `git checkout <branchname>`
 
-合并分支
-> `git merge`
+
 
 创建新分支并立即切换到该分支下
-> `git branch -b <branchname>`
+> `git checkout -b <branchname>`
 
 删除分支
 > `git branch -d <branchname>`
+
+合并分支
+> `git merge <sourcebranch>`
